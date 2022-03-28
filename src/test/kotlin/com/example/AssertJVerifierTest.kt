@@ -1,19 +1,25 @@
 package com.example
 
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertAll
 
 class AssertJVerifierTest {
 
     @Test
-    fun `test using kotlin's assertall`() {
-        val one: String = "somebody"
-        val two: String = "once"
+    fun `test using kotlin's assertAll`() {
+        val one = "somebody"
 
-        assertAll(
-            "Just simple test",
-            { Assertions.assertThat(one).isEqualTo("somebody") }
+        org.junit.jupiter.api.assertAll(
+            { assertThat(one).isEqualTo("somebody") }
+        )
+    }
+
+    @Test
+    fun `test using other java's assertAll`() {
+        val two = "once"
+
+        org.junit.jupiter.api.Assertions.assertAll(
+            { assertThat(two).isEqualTo("once") }
         )
     }
 }
