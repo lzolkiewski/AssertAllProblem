@@ -1,7 +1,6 @@
 # TestVerifier
 
-During our development we have encountered a problem where using kotlin's asserAll caused an exception while using other
-implementation did not.
+During our development we have encountered a problem where using kotlin's asserAll caused an exception while its java counterpart did not.
 
 ## In order to reproduce the problem
 
